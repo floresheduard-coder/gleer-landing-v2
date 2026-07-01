@@ -3,147 +3,284 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gleer | Digital Studio</title>
+  <title>Gleer | Alta Costura y Confección a Medida</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Inter", sans-serif;
+    :root {
+      --borgona:#7A1E27;
+      --borgona-oscuro:#5C151D;
+      --dorado:#C9A45C;
+      --crema:#F7F1E8;
+      --beige:#EFE3D3;
+      --texto:#3D3530;
     }
 
+    * { margin:0; padding:0; box-sizing:border-box; }
+
     body {
-      background: #050814;
-      color: white;
-      overflow-x: hidden;
+      font-family:'Montserrat', sans-serif;
+      background:var(--crema);
+      color:var(--texto);
     }
 
     nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 60px;
-      position: sticky;
-      top: 0;
-      background: rgba(5,8,20,0.7);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position:sticky;
+      top:0;
+      z-index:10;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 8%;
+      background:rgba(247,241,232,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(122,30,39,.12);
     }
 
     .logo {
-      font-weight: 700;
-      color: #60a5fa;
-      font-size: 20px;
+      font-family:'Playfair Display', serif;
+      font-size:34px;
+      color:var(--borgona);
+      font-style:italic;
+    }
+
+    .nav-link {
+      color:var(--borgona);
+      text-decoration:none;
+      font-weight:500;
+      margin-left:24px;
     }
 
     .btn {
-      background: linear-gradient(135deg, #3b82f6, #6366f1);
-      padding: 10px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
-      font-weight: 500;
+      display:inline-block;
+      background:var(--borgona);
+      color:white;
+      padding:13px 22px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 10px 25px rgba(122,30,39,.22);
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 10px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: white;
-    }
+    .btn:hover { background:var(--borgona-oscuro); }
 
     .hero {
-      text-align: center;
-      padding: 140px 20px 100px;
+      min-height:88vh;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:40px;
+      padding:70px 8%;
+      background:
+        radial-gradient(circle at top left, rgba(201,164,92,.22), transparent 35%),
+        linear-gradient(135deg, #F9F2E8, #EFE2D4);
     }
 
     .hero h1 {
-      font-size: 64px;
-      line-height: 1.05;
-      letter-spacing: -2px;
+      font-family:'Playfair Display', serif;
+      font-size:62px;
+      line-height:1.05;
+      color:var(--borgona);
+      margin-bottom:20px;
     }
 
     .hero p {
-      margin-top: 20px;
-      font-size: 18px;
-      opacity: 0.7;
+      font-size:18px;
+      line-height:1.7;
+      max-width:560px;
+      margin-bottom:30px;
     }
 
-    .actions {
-      margin-top: 35px;
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
+    .hero-img {
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 30px 70px rgba(66,40,30,.25);
+      border:8px solid rgba(255,255,255,.65);
     }
 
-    .section {
-      padding: 100px 20px;
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
+    .hero-img img {
+      width:100%;
+      display:block;
     }
 
-    .section h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
+    .features {
+      background:var(--borgona);
+      color:white;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+      padding:38px 8%;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+    .feature {
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+
+    .icon {
+      font-size:38px;
+      color:var(--dorado);
+    }
+
+    .feature strong {
+      display:block;
+      letter-spacing:.5px;
+      margin-bottom:5px;
+    }
+
+    section {
+      padding:90px 8%;
+    }
+
+    .section-title {
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2 {
+      font-family:'Playfair Display', serif;
+      font-size:44px;
+      color:var(--borgona);
+      margin-bottom:12px;
+    }
+
+    .section-title p {
+      max-width:650px;
+      margin:auto;
+      line-height:1.7;
+    }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
     }
 
     .card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 25px;
-      border-radius: 16px;
-      transition: 0.3s;
-      text-align: left;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      background: rgba(255,255,255,0.07);
+      background:white;
+      padding:32px;
+      border-radius:22px;
+      box-shadow:0 15px 35px rgba(70,45,35,.08);
+      border:1px solid rgba(122,30,39,.08);
     }
 
     .card h3 {
-      margin-bottom: 10px;
-      font-size: 18px;
+      color:var(--borgona);
+      margin-bottom:12px;
+      font-size:20px;
     }
 
     .card p {
-      opacity: 0.7;
-      font-size: 14px;
-      line-height: 1.5;
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .story {
+      background:white;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .story-box {
+      background:var(--crema);
+      padding:45px;
+      border-radius:28px;
+      border-left:6px solid var(--dorado);
+    }
+
+    .story h2 {
+      font-family:'Playfair Display', serif;
+      color:var(--borgona);
+      font-size:42px;
+      margin-bottom:20px;
+    }
+
+    .story p {
+      line-height:1.8;
+      margin-bottom:15px;
+    }
+
+    .testimonial {
+      background:linear-gradient(135deg, var(--beige), var(--crema));
+      text-align:center;
+    }
+
+    .quote {
+      max-width:760px;
+      margin:auto;
+      font-size:24px;
+      line-height:1.7;
+      font-style:italic;
+      color:#2f2925;
+    }
+
+    .quote-mark {
+      font-size:70px;
+      color:var(--borgona);
+      line-height:1;
+    }
+
+    .client {
+      margin-top:25px;
+      color:var(--borgona);
+      font-weight:600;
+    }
+
+    .contact {
+      text-align:center;
+      background:var(--borgona);
+      color:white;
+    }
+
+    .contact h2 {
+      font-family:'Playfair Display', serif;
+      font-size:44px;
+      margin-bottom:15px;
+    }
+
+    .contact p {
+      margin-bottom:28px;
+      opacity:.9;
+    }
+
+    .contact .btn {
+      background:var(--dorado);
+      color:#3d2414;
     }
 
     footer {
-      text-align: center;
-      padding: 60px;
-      opacity: 0.5;
-      font-size: 14px;
+      text-align:center;
+      padding:28px;
+      background:#4A1218;
+      color:white;
+      font-size:14px;
+      opacity:.95;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @media(max-width:850px) {
+      .hero, .story {
+        grid-template-columns:1fr;
+      }
 
-    .hero h1, .hero p, .actions {
-      animation: fadeIn 1s ease;
+      .hero h1 {
+        font-size:44px;
+      }
+
+      .features, .cards {
+        grid-template-columns:1fr;
+      }
+
+      nav {
+        padding:16px 6%;
+      }
+
+      .nav-link {
+        display:none;
+      }
     }
   </style>
 </head>
@@ -152,81 +289,101 @@
 
   <nav>
     <div class="logo">Gleer</div>
-    <a class="btn" href="#contacto">Contactar</a>
+    <div>
+      <a class="nav-link" href="#vestidos">Vestidos</a>
+      <a class="nav-link" href="#historia">Historia</a>
+      <a class="btn" href="#contacto">WhatsApp</a>
+    </div>
   </nav>
 
   <section class="hero">
-    <div style="max-width:900px; margin:auto;">
-      <h1>
-        Construimos productos digitales que <span style="color:#60a5fa;">crecen negocios</span>
-      </h1>
-
+    <div>
+      <h1>Vestidos hechos con amor para cada ocasión</h1>
       <p>
-        Diseño, desarrollo y automatización para empresas modernas.
+        Alta costura y confección a medida, creada con dedicación,
+        detalle y cariño para mujeres que buscan sentirse elegantes,
+        cómodas y especiales.
       </p>
+      <a class="btn" href="#contacto">Solicitar información</a>
+    </div>
 
-      <div class="actions">
-        <a class="btn" href="#servicios">Empezar</a>
-        <a class="btn-secondary" href="#contacto">Hablar con nosotros</a>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1612336307429-8a898d10e223?q=80&w=1200&auto=format&fit=crop" alt="Vestido Gleer">
+    </div>
+  </section>
+
+  <div class="features">
+    <div class="feature">
+      <div class="icon">♡</div>
+      <div><strong>DISEÑOS EXCLUSIVOS</strong><span>para cada ocasión</span></div>
+    </div>
+    <div class="feature">
+      <div class="icon">✂</div>
+      <div><strong>CONFECCIÓN</strong><span>a medida</span></div>
+    </div>
+    <div class="feature">
+      <div class="icon">♡</div>
+      <div><strong>HECHO CON AMOR</strong><span>en cada detalle</span></div>
+    </div>
+  </div>
+
+  <section id="vestidos">
+    <div class="section-title">
+      <h2>Nuestros vestidos</h2>
+      <p>Prendas diseñadas para acompañarte en momentos especiales, con acabados cuidados y un estilo femenino, sobrio y elegante.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Vestidos para iglesia</h3>
+        <p>Diseños modestos, delicados y cómodos para reuniones, actividades y domingos especiales.</p>
+      </div>
+      <div class="card">
+        <h3>Ocasiones especiales</h3>
+        <p>Vestidos personalizados para eventos familiares, celebraciones y momentos memorables.</p>
+      </div>
+      <div class="card">
+        <h3>A medida</h3>
+        <p>Confección pensada en tu estilo, talla, comodidad y preferencias personales.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="servicios">
-    <h2>Servicios</h2>
+  <section class="story" id="historia">
+    <div class="story-box">
+      <h2>Una marca familiar</h2>
+      <p>
+        Gleer nace como una marca creada desde el amor por la familia,
+        la costura y los detalles hechos con dedicación.
+      </p>
+      <p>
+        Cada vestido busca transmitir cuidado, elegancia y cercanía,
+        acompañando a cada clienta en momentos importantes de su vida.
+      </p>
+    </div>
 
-    <div class="grid">
-      <div class="card">
-        <h3>🚀 Web Apps modernas</h3>
-        <p>Interfaces rápidas, escalables y enfocadas en conversión.</p>
-      </div>
-
-      <div class="card">
-        <h3>⚡ Automatización</h3>
-        <p>Reducimos procesos manuales con sistemas inteligentes.</p>
-      </div>
-
-      <div class="card">
-        <h3>📈 Crecimiento digital</h3>
-        <p>Estrategias para atraer y convertir usuarios reales.</p>
-      </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop" alt="Confección de vestido">
     </div>
   </section>
 
-  <section class="section">
-    <h2>Cómo trabajamos</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>1. Entendemos tu idea</h3>
-        <p>Analizamos tu negocio y definimos la solución ideal.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Construimos el producto</h3>
-        <p>Diseñamos y desarrollamos una solución moderna y rápida.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Lanzamos y escalamos</h3>
-        <p>Publicamos tu producto y lo optimizamos para crecer.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contacto">
-    <h2>Hablemos</h2>
-    <p style="opacity:0.7; margin-bottom:20px;">
-      Construyamos algo grande juntos
+  <section class="testimonial">
+    <div class="quote-mark">“</div>
+    <p class="quote">
+      Me encantó este vestido. La calidad es increíble, llegó en muy buen estado
+      y se mantiene así desde que lo he tenido. Estoy muy contenta con el vestido.
     </p>
+    <div class="client">— Cliente Gleer, Estados Unidos 🇺🇸</div>
+  </section>
 
-    <a class="btn" href="mailto:contacto@gleer.com">
-      Enviar mensaje
-    </a>
+  <section class="contact" id="contacto">
+    <h2>¿Deseas un vestido a medida?</h2>
+    <p>Escríbenos y conversemos sobre el diseño que tienes en mente.</p>
+    <a class="btn" href="https://wa.me/51942151069" target="_blank">Contactar por WhatsApp</a>
   </section>
 
   <footer>
-    © 2026 Gleer — Digital Studio
+    © 2026 Gleer — Alta costura y confección a medida
   </footer>
 
 </body>
